@@ -5,7 +5,6 @@
 package com.mycompany.facturapro.GUI;
 
 import com.mycompany.facturapro.Bill.Bill;
-import com.mycompany.facturapro.Users.LegalEntity;
 import com.mycompany.facturapro.Users.Person;
 import com.mycompany.facturapro.Users.NaturalPerson;
 import com.mycompany.facturapro.product.Product;
@@ -50,38 +49,23 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btnVerInventario = new javax.swing.JButton();
         btnCerrar = new javax.swing.JButton();
-        btnBuscarProducto = new javax.swing.JButton();
-        btnAgregarProducto = new javax.swing.JButton();
-        btnCrearProducto = new javax.swing.JButton();
         btnBuscarCliente = new javax.swing.JButton();
         btnNuevoCliente = new javax.swing.JButton();
         btnGenerarFactura = new javax.swing.JButton();
         btnBuscarFactura = new javax.swing.JButton();
         btnHistorial = new javax.swing.JButton();
-        btnEliminarProducto = new javax.swing.JButton();
         btnEliminarCliente = new javax.swing.JButton();
+        btnProduct = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("FacturaPro");
 
-        btnVerInventario.setText("Ver inventario");
-        btnVerInventario.addActionListener(this::btnVerInventarioActionPerformed);
-
         btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(this::btnCerrarActionPerformed);
-
-        btnBuscarProducto.setText("Buscar producto");
-        btnBuscarProducto.addActionListener(this::btnBuscarProductoActionPerformed);
-
-        btnAgregarProducto.setText("Agregar producto");
-        btnAgregarProducto.addActionListener(this::btnAgregarProductoActionPerformed);
-
-        btnCrearProducto.setText("Crear producto");
-        btnCrearProducto.addActionListener(this::btnCrearProductoActionPerformed);
 
         btnBuscarCliente.setText("Buscar cliente");
         btnBuscarCliente.addActionListener(this::btnBuscarClienteActionPerformed);
@@ -98,179 +82,75 @@ public class Menu extends javax.swing.JFrame {
         btnHistorial.setText("Histórico de facturas");
         btnHistorial.addActionListener(this::btnHistorialActionPerformed);
 
-        btnEliminarProducto.setText("Eliminar producto");
-        btnEliminarProducto.addActionListener(this::btnEliminarProductoActionPerformed);
-
         btnEliminarCliente.setText("Eliminar cliente");
         btnEliminarCliente.addActionListener(this::btnEliminarClienteActionPerformed);
+
+        btnProduct.setText("Menú productos");
+        btnProduct.addActionListener(this::btnProductActionPerformed);
+
+        jButton1.setText("Facturas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnVerInventario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnBuscarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnAgregarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnCrearProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnProduct, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnBuscarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnNuevoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnGenerarFactura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnBuscarFactura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(btnEliminarProducto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEliminarCliente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(btnEliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(btnCerrar)
-                .addGap(25, 25, 25))
-            .addComponent(btnHistorial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(36, 36, 36))
             .addGroup(layout.createSequentialGroup()
                 .addGap(232, 232, 232)
                 .addComponent(jLabel1)
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnHistorial, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
+                        .addComponent(btnGenerarFactura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBuscarFactura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addGap(37, 37, 37)
-                .addComponent(btnVerInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAgregarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnCrearProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnBuscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnNuevoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnGenerarFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnBuscarFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(39, 39, 39)
+                .addComponent(btnProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnBuscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnNuevoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnGenerarFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBuscarFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCerrar)
-                    .addComponent(btnEliminarProducto)
-                    .addComponent(btnEliminarCliente))
-                .addContainerGap())
+                    .addComponent(btnEliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnVerInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerInventarioActionPerformed
-        // TODO add your handling code here:
-        
-        JOptionPane.showMessageDialog(null, inventario.stream().map(p -> "Nombre: " + p.getName() + "\n Stock: " + p.getStock()).toList());
-    }//GEN-LAST:event_btnVerInventarioActionPerformed
-
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_btnCerrarActionPerformed
-
-    private void btnBuscarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProductoActionPerformed
-        // TODO add your handling code here:
-        String element = JOptionPane.showInputDialog("Ingrese el nombre del producto a buscar" + inventario.stream().map(p -> "Nombre: " + p.getName() + "\n Stock: " + p.getStock()).toList());
-        
-        Product producto = inventario.stream()
-                        .filter(product -> product.getName().equalsIgnoreCase(element))
-                        .findFirst()
-                        .orElse(null);
-        
-        if(!element.equals("") && !element.equals(" ") && element != null){
-            
-            if(producto != null){
-                JOptionPane.showMessageDialog(null, producto.verProduto());
-            }else{
-                JOptionPane.showMessageDialog(null, "El producto " + element + " no existe");
-            }
-            
-        }else{
-            JOptionPane.showMessageDialog(null, "No ingresó ningún elemento a buscar");
-        }
-    }//GEN-LAST:event_btnBuscarProductoActionPerformed
-
-    private void btnAgregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarProductoActionPerformed
-        // TODO add your handling code here:
-        String element = JOptionPane.showInputDialog("Ingrese el nombre del producto a agregar" + inventario.stream().map(p -> "Nombre: " + p.getName() + "\n Stock: " + p.getStock()).toList());
-        
-        Product producto = inventario.stream()
-                        .filter(product -> product.getName().equalsIgnoreCase(element))
-                        .findFirst()
-                        .orElse(null);
-        
-        if(!element.equals("") && !element.equals(" ") && element != null){
-            if(producto != null){
-                int cantidad = 0;
-                
-                while(true){
-                    try{
-                        cantidad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad que desea agregar"));
-                        break;
-                    }catch(NumberFormatException e){
-                        JOptionPane.showMessageDialog(null, "El valor ingresado no es válido");
-                    }
-                }
-                producto.setStock(producto.getStock() + cantidad);
-                JOptionPane.showMessageDialog(null, "Producto agregado");
-            }else{
-                JOptionPane.showMessageDialog(null, "Este producto no existe");
-            }
-        }else{
-            JOptionPane.showMessageDialog(null, "No ha agregado ningún elemento");
-        }
-        
-    }//GEN-LAST:event_btnAgregarProductoActionPerformed
-
-    private void btnCrearProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearProductoActionPerformed
-        // TODO add your handling code here:
-        String element = JOptionPane.showInputDialog("Ingrese el nombre del producto a crear");
-        
-        Product producto = inventario.stream()
-                        .filter(product -> product.getName().equalsIgnoreCase(element))
-                        .findFirst()
-                        .orElse(null);
-        
-        if(!element.equals("") && !element.equals(" ") && element != null){
-            if(producto != null){
-                JOptionPane.showMessageDialog(null, "Este producto ya existe");
-            }else{
-                long price = 0;
-                int stock = 0;
-                String description = JOptionPane.showInputDialog("Ingrese una descripción del producto a crear");
-                
-                while(true){
-                    try{
-                        price = Long.parseLong(JOptionPane.showInputDialog("Ingrese el precio del producto"));
-                        
-                        break;
-                    }catch(NumberFormatException e){
-                        JOptionPane.showMessageDialog(null, "El valor ingresado no es válido");
-                    }
-                }
-                
-                while(true){
-                    try{
-                        stock = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad del producto"));
-                        break;
-                    }catch(NumberFormatException e){
-                        JOptionPane.showMessageDialog(null, "El valor ingresado no es válido");
-                    }
-                }
-                inventario.add(new Product(element, description, price, stock));
-                JOptionPane.showMessageDialog(null, "Producto creado");
-            }
-        }else{
-            JOptionPane.showMessageDialog(null, "No ha agregado ningún elemento");
-        }    
-    }//GEN-LAST:event_btnCrearProductoActionPerformed
     
     private void btnBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarClienteActionPerformed
         // TODO add your handling code here:
@@ -296,45 +176,10 @@ public class Menu extends javax.swing.JFrame {
     private void btnNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoClienteActionPerformed
         // TODO add your handling code here:
         
-        long id = 0;
-        String element = JOptionPane.showInputDialog("Ingrese el nombre del cliente a crear");
+        NewClientScreen pantalla = new NewClientScreen(this);
+        pantalla.setVisible(true);
+        pantalla.setLocationRelativeTo(null);
         
-        Person cliente = clients.stream()
-                .filter(client -> client.getNombre().equalsIgnoreCase(element))
-                .findFirst()
-                .orElse(null);
-        
-        if(!element.equals("") && !element.equals(" ") && element != null){
-            if(cliente != null){
-                JOptionPane.showMessageDialog(null, "El cliente ingresado ya existe");
-            }else{
-                String typeId = JOptionPane.showInputDialog("Ingrese 1 si el cliente es persona natural o 2 si es persona jurídica");
-                
-                while(!typeId.equals("1") && !typeId.equals("2")){
-                    JOptionPane.showMessageDialog(null, "El valor ingresado no es válido");
-                    typeId = JOptionPane.showInputDialog("Ingrese 1 si el cliente es persona natural o 2 si es persona jurídica");
-                }
-                
-                while(true){
-                    try{
-                        id = Long.parseLong(JOptionPane.showInputDialog("Ingrese el ID de " + element));
-                        break;
-                        
-                    }catch(NumberFormatException e){
-                        JOptionPane.showMessageDialog(null, "El dato ingresado no es válido");
-                    }
-                }
-                if(typeId.equals("1")){
-                    clients.add(new NaturalPerson(element, id));
-                }else{
-                    clients.add(new LegalEntity(element, id));
-                }
-                
-                JOptionPane.showMessageDialog(null, "Cliente agregado");
-            }
-        }else{
-            JOptionPane.showMessageDialog(null, "No ha ingresado ningún valor");
-        }
     }//GEN-LAST:event_btnNuevoClienteActionPerformed
 
     private void btnGenerarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarFacturaActionPerformed
@@ -362,24 +207,29 @@ public class Menu extends javax.swing.JFrame {
                     if(producto != null){
                         break;
                     }else{
-                        JOptionPane.showMessageDialog(null, "El dato ingresado no es válido");
-                        product = JOptionPane.showInputDialog("Ingrese el producto que desea agregar (" + inventario.stream().map(p -> p.getName() + " - " + p.getStock() + ")\n").toList());
-                        producto = inventario.stream()
-                        .filter(p -> p.getName().equalsIgnoreCase(product))
-                        .findFirst()
-                        .orElse(null);
+                        if(inventario.size() == 0){
+                            JOptionPane.showMessageDialog(null, "No hay ningún producto en el inventario");
+                            break;
+                        }else{
+                            JOptionPane.showMessageDialog(null, "El dato ingresado no es válido");
+                            product = JOptionPane.showInputDialog("Ingrese el producto que desea agregar (" + inventario.stream().map(p -> p.getName() + " - " + p.getStock() + ")\n").toList());
+                            producto = inventario.stream()
+                            .filter(p -> p.getName().equalsIgnoreCase(product))
+                            .findFirst()
+                            .orElse(null);
+                        }
                     }
                 }
-                
-                while(true){
-                    try{
-                        cantidad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad que desea facturar"));
-                        break;
-                        
-                    }catch(NumberFormatException e){
-                        JOptionPane.showMessageDialog(null, "El valor ingresado no es válido");
+                if(inventario.size() != 0){
+                    while(true){
+                        try{
+                            cantidad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad que desea facturar"));
+                            break;
+
+                        }catch(NumberFormatException e){
+                            JOptionPane.showMessageDialog(null, "El valor ingresado no es válido");
+                        }
                     }
-                }
                 
                 while(true){
                     if(cantidad > producto.getStock()){
@@ -406,12 +256,24 @@ public class Menu extends javax.swing.JFrame {
                 
                 if(opcionElegida.equals("2")){
                     break;
+                }else{
+                    break;
                 }
+                }else{
+                    break;
+                }
+                
             }
-            Bill factura = new Bill(vendedor, cliente, productosFacturar, price);
-            facturas.add(factura);
             
-            JOptionPane.showMessageDialog(null, factura.printBill());
+            if(productosFacturar.size() != 0){
+                Bill factura = new Bill(vendedor, cliente, productosFacturar, price);
+                facturas.add(factura);
+
+                JOptionPane.showMessageDialog(null, factura.printBill());
+            }else{
+                JOptionPane.showMessageDialog(null, "No se pudo generar la factura");
+            }
+            
             
         }
     }//GEN-LAST:event_btnGenerarFacturaActionPerformed
@@ -440,55 +302,58 @@ public class Menu extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, facturas.stream().map(p -> p.printBill() + "\n").toList());
     }//GEN-LAST:event_btnHistorialActionPerformed
 
-    private void btnEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductoActionPerformed
+    private void btnProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductActionPerformed
         // TODO add your handling code here:
-        product = JOptionPane.showInputDialog("Ingrese el producto que desea eliminar (" + inventario.stream().map(p -> p.getName() + " - " + p.getStock() + ")\n").toList());
-        Product producto = inventario.stream()
-                    .filter(p -> p.getName().equalsIgnoreCase(product))
-                    .findFirst()
-                    .orElse(null);
-        
-        if(producto == null){
-            JOptionPane.showMessageDialog(null, "El producto ingresado no existe");
-        }else{
-            inventario.remove(producto);
-            JOptionPane.showMessageDialog(null, "Producto eliminado");
-        }
-        
-    }//GEN-LAST:event_btnEliminarProductoActionPerformed
+        ProductScreen pantalla = new ProductScreen(inventario, this);
+        pantalla.setVisible(true);
+        pantalla.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnProductActionPerformed
 
     private void btnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClienteActionPerformed
         // TODO add your handling code here:
-        
+
         String element = JOptionPane.showInputDialog("Ingrese el nombre del cliente que desea eliminar "+ clients.stream().map(Person::getNombre).toList() + ")");
-        
+
         Person cliente = clients.stream()
-                .filter(client -> client.getNombre().equalsIgnoreCase(element))
-                .findFirst()
-                .orElse(null);
-        
+        .filter(client -> client.getNombre().equalsIgnoreCase(element))
+        .findFirst()
+        .orElse(null);
+
         if(cliente == null){
             JOptionPane.showMessageDialog(null, "El cliente ingresado no existe");
         }else{
             clients.remove(cliente);
             JOptionPane.showMessageDialog(null, "Cliente eliminado");
         }
-        
+
     }//GEN-LAST:event_btnEliminarClienteActionPerformed
 
+    public void setClient(Person p){
+        clients.add(p);
+        JOptionPane.showMessageDialog(null, "Cliente agregado");
+    }
+
+
+    public List<Person> getClients() {
+        return clients;
+    }
+
+    public void setInventario(List<Product> inventario) {
+        this.inventario = inventario;
+    }
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarProducto;
     private javax.swing.JButton btnBuscarCliente;
     private javax.swing.JButton btnBuscarFactura;
-    private javax.swing.JButton btnBuscarProducto;
     private javax.swing.JButton btnCerrar;
-    private javax.swing.JButton btnCrearProducto;
     private javax.swing.JButton btnEliminarCliente;
-    private javax.swing.JButton btnEliminarProducto;
     private javax.swing.JButton btnGenerarFactura;
     private javax.swing.JButton btnHistorial;
     private javax.swing.JButton btnNuevoCliente;
-    private javax.swing.JButton btnVerInventario;
+    private javax.swing.JButton btnProduct;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

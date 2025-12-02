@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.facturapro.Bill;
 
 import com.mycompany.facturapro.Users.Person;
@@ -10,10 +7,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- *
- * @author Usuario
- */
 public class Bill {
     private Person seller;
     private Person client;
@@ -51,9 +44,43 @@ public class Bill {
                 + "Fecha de registro: " + this.billingDate;
     }
 
+    public Person getSeller() {
+        return seller;
+    }
+
+    public void setSeller(Person seller) {
+        this.seller = seller;
+    }
+
     public Person getClient() {
         return client;
     }
-    
-    
+
+    public void setClient(Person client) {
+        this.client = client;
+    }
+
+    public List<Product> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Product> productos) {
+        this.productos = productos;
+    }
+
+    public LocalDateTime getBillingDate() {
+        return billingDate;
+    }
+
+    public void setBillingDate(LocalDateTime billingDate) {
+        this.billingDate = billingDate;
+    }
+
+    public long getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(long totalPrice) {
+        this.totalPrice = totalPrice;
+    }
 }

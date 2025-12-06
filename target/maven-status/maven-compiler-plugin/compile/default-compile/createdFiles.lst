@@ -1,0 +1,5 @@
+com\mycompany\facturapro\database\ProductsDB.class
+com\mycompany\facturapro\database\CustomerDB.class
+com\mycompany\facturapro\database\Session.class
+com\mycompany\facturapro\database\BillsDB.class
+com\mycompany\facturapro\database\LoginDB.class
